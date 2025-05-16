@@ -76,7 +76,67 @@ The offset for side-step is computed using:
 
 ```math
 FOV_rad = (π / 180) × FOV
+
 PPM = W / (2 × tan(FOV_rad / 2) × D)
+
 w_px = sqrt(A)
+
 offset_px = |(w_px / 2) - (W / 2)|
+
 LateralShift_m = offset_px / PPM
+
+```
+---
+
+### 📐 Variable Definitions
+
+**Where:**
+
+- `W` = Image width (px)  
+- `FOV` = Camera field of view (°)  
+- `D` = Object distance (m) from LiDAR  
+- `A` = Contour area (px²)  
+- `w_px` = Estimated object width (px)
+
+---
+
+### ⚙️ FSM-Based Behavior Logic
+
+| Color Detected | Action          |
+|----------------|-----------------|
+| 🔵 Blue        | Side-step Left  |
+| 🔴 Red         | Side-step Right |
+
+The robot computes the new goal by **translating its current position laterally** and resumes the navigation to the next waypoint.
+
+---
+
+### 📂 Resources
+
+- **GitHub Repo**: [Source Code](https://github.com/your-username/turtlebot3-color-aware-navigation)
+- **Demo Videos**:
+  - [🗺️ SLAM Mapping + First Run](https://drive.google.com/file/d/1UaMZxqPJT6QfQmIylV5r0fx4cvESgiKK/view?usp=sharing)
+  - [🎯 Optimized Color-Aware Navigation](https://drive.google.com/file/d/1tP28uWU_Dt9cDNH5ABu3sfvdU57wGCHI/view?usp=sharing)
+
+---
+
+### ✅ Conclusion
+
+This project shows that a TurtleBot3 can:
+
+- ✅ Follow waypoints with Nav2  
+- ✅ Build a 2D map using SLAM Toolbox  
+- ✅ Detect red and blue objects using real-time RGB + LiDAR data  
+- ✅ Perform lateral detours based on perceived color and location  
+
+The visual and logical contrast between the two runs clearly demonstrates the value of the color-aware logic.
+
+**Future improvements may include:**
+
+- 🔧 More robust detection in low light  
+- 🔄 Smoother detour transitions  
+- 🧠 Adaptive thresholds based on environment
+
+---
+This README was formatted with assistance from [ChatGPT](https://chat.openai.com/)
+
