@@ -1,0 +1,69 @@
+[0.859s] Invoking command in '/home/nirmalraja/colornav_ws/src/cnav': PYTHONPATH=/home/nirmalraja/colornav_ws/build/cnav/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/nirmalraja/colornav_ws/install/cnav/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/cnav build --build-base /home/nirmalraja/colornav_ws/build/cnav/build install --record /home/nirmalraja/colornav_ws/build/cnav/install.log --single-version-externally-managed install_data
+[1.194s] running egg_info
+[1.195s] creating ../../build/cnav/cnav.egg-info
+[1.195s] writing ../../build/cnav/cnav.egg-info/PKG-INFO
+[1.196s] writing dependency_links to ../../build/cnav/cnav.egg-info/dependency_links.txt
+[1.196s] writing entry points to ../../build/cnav/cnav.egg-info/entry_points.txt
+[1.196s] writing requirements to ../../build/cnav/cnav.egg-info/requires.txt
+[1.196s] writing top-level names to ../../build/cnav/cnav.egg-info/top_level.txt
+[1.196s] writing manifest file '../../build/cnav/cnav.egg-info/SOURCES.txt'
+[1.199s] reading manifest file '../../build/cnav/cnav.egg-info/SOURCES.txt'
+[1.200s] writing manifest file '../../build/cnav/cnav.egg-info/SOURCES.txt'
+[1.200s] running build
+[1.200s] running build_py
+[1.201s] creating /home/nirmalraja/colornav_ws/build/cnav/build
+[1.201s] creating /home/nirmalraja/colornav_ws/build/cnav/build/lib
+[1.201s] creating /home/nirmalraja/colornav_ws/build/cnav/build/lib/cnav
+[1.201s] copying cnav/spawn_entity.py -> /home/nirmalraja/colornav_ws/build/cnav/build/lib/cnav
+[1.201s] copying cnav/__init__.py -> /home/nirmalraja/colornav_ws/build/cnav/build/lib/cnav
+[1.201s] copying cnav/msg.py -> /home/nirmalraja/colornav_ws/build/cnav/build/lib/cnav
+[1.201s] copying cnav/maze_solver.py -> /home/nirmalraja/colornav_ws/build/cnav/build/lib/cnav
+[1.202s] copying cnav/occupancy_grid_pub.py -> /home/nirmalraja/colornav_ws/build/cnav/build/lib/cnav
+[1.202s] copying cnav/maze_task.py -> /home/nirmalraja/colornav_ws/build/cnav/build/lib/cnav
+[1.202s] running install
+[1.203s] running install_lib
+[1.204s] creating /home/nirmalraja/colornav_ws/install/cnav/lib/python3.10/site-packages/cnav
+[1.204s] copying /home/nirmalraja/colornav_ws/build/cnav/build/lib/cnav/spawn_entity.py -> /home/nirmalraja/colornav_ws/install/cnav/lib/python3.10/site-packages/cnav
+[1.204s] copying /home/nirmalraja/colornav_ws/build/cnav/build/lib/cnav/__init__.py -> /home/nirmalraja/colornav_ws/install/cnav/lib/python3.10/site-packages/cnav
+[1.204s] copying /home/nirmalraja/colornav_ws/build/cnav/build/lib/cnav/msg.py -> /home/nirmalraja/colornav_ws/install/cnav/lib/python3.10/site-packages/cnav
+[1.204s] copying /home/nirmalraja/colornav_ws/build/cnav/build/lib/cnav/maze_solver.py -> /home/nirmalraja/colornav_ws/install/cnav/lib/python3.10/site-packages/cnav
+[1.204s] copying /home/nirmalraja/colornav_ws/build/cnav/build/lib/cnav/occupancy_grid_pub.py -> /home/nirmalraja/colornav_ws/install/cnav/lib/python3.10/site-packages/cnav
+[1.204s] copying /home/nirmalraja/colornav_ws/build/cnav/build/lib/cnav/maze_task.py -> /home/nirmalraja/colornav_ws/install/cnav/lib/python3.10/site-packages/cnav
+[1.207s] byte-compiling /home/nirmalraja/colornav_ws/install/cnav/lib/python3.10/site-packages/cnav/spawn_entity.py to spawn_entity.cpython-310.pyc
+[1.207s] byte-compiling /home/nirmalraja/colornav_ws/install/cnav/lib/python3.10/site-packages/cnav/__init__.py to __init__.cpython-310.pyc
+[1.207s] byte-compiling /home/nirmalraja/colornav_ws/install/cnav/lib/python3.10/site-packages/cnav/msg.py to msg.cpython-310.pyc
+[1.211s] byte-compiling /home/nirmalraja/colornav_ws/install/cnav/lib/python3.10/site-packages/cnav/maze_solver.py to maze_solver.cpython-310.pyc
+[1.211s] byte-compiling /home/nirmalraja/colornav_ws/install/cnav/lib/python3.10/site-packages/cnav/occupancy_grid_pub.py to occupancy_grid_pub.cpython-310.pyc
+[1.212s] byte-compiling /home/nirmalraja/colornav_ws/install/cnav/lib/python3.10/site-packages/cnav/maze_task.py to maze_task.cpython-310.pyc
+[1.213s] running install_data
+[1.213s] creating /home/nirmalraja/colornav_ws/install/cnav/share/ament_index
+[1.213s] creating /home/nirmalraja/colornav_ws/install/cnav/share/ament_index/resource_index
+[1.213s] creating /home/nirmalraja/colornav_ws/install/cnav/share/ament_index/resource_index/packages
+[1.213s] copying resource/cnav -> /home/nirmalraja/colornav_ws/install/cnav/share/ament_index/resource_index/packages
+[1.213s] copying package.xml -> /home/nirmalraja/colornav_ws/install/cnav/share/cnav
+[1.213s] creating /home/nirmalraja/colornav_ws/install/cnav/share/cnav/launch
+[1.214s] copying launch/maze_navigation.launch.py -> /home/nirmalraja/colornav_ws/install/cnav/share/cnav/launch
+[1.214s] creating /home/nirmalraja/colornav_ws/install/cnav/share/cnav/config
+[1.214s] copying config/tb3_nav_params.yaml -> /home/nirmalraja/colornav_ws/install/cnav/share/cnav/config
+[1.214s] copying config/twist_mux.yaml -> /home/nirmalraja/colornav_ws/install/cnav/share/cnav/config
+[1.214s] copying config/maze.yaml -> /home/nirmalraja/colornav_ws/install/cnav/share/cnav/config
+[1.214s] copying config/maze2.yaml -> /home/nirmalraja/colornav_ws/install/cnav/share/cnav/config
+[1.214s] copying config/tb3_world.yaml -> /home/nirmalraja/colornav_ws/install/cnav/share/cnav/config
+[1.214s] copying config/tb3_world.pgm -> /home/nirmalraja/colornav_ws/install/cnav/share/cnav/config
+[1.214s] copying config/tb3_cartographer.lua -> /home/nirmalraja/colornav_ws/install/cnav/share/cnav/config
+[1.214s] copying config/tb3_nav.rviz -> /home/nirmalraja/colornav_ws/install/cnav/share/cnav/config
+[1.214s] copying config/maze.pgm -> /home/nirmalraja/colornav_ws/install/cnav/share/cnav/config
+[1.215s] copying config/maze2.pgm -> /home/nirmalraja/colornav_ws/install/cnav/share/cnav/config
+[1.215s] creating /home/nirmalraja/colornav_ws/install/cnav/share/cnav/world
+[1.215s] creating /home/nirmalraja/colornav_ws/install/cnav/share/cnav/world/maze
+[1.215s] copying world/maze/model.config -> /home/nirmalraja/colornav_ws/install/cnav/share/cnav/world/maze
+[1.215s] copying world/maze/model.sdf -> /home/nirmalraja/colornav_ws/install/cnav/share/cnav/world/maze
+[1.215s] running install_egg_info
+[1.218s] Copying ../../build/cnav/cnav.egg-info to /home/nirmalraja/colornav_ws/install/cnav/lib/python3.10/site-packages/cnav-0.0.0-py3.10.egg-info
+[1.219s] running install_scripts
+[1.249s] Installing maze_solver script to /home/nirmalraja/colornav_ws/install/cnav/lib/cnav
+[1.249s] Installing maze_task script to /home/nirmalraja/colornav_ws/install/cnav/lib/cnav
+[1.249s] Installing msg script to /home/nirmalraja/colornav_ws/install/cnav/lib/cnav
+[1.250s] Installing occupancy_grid_pub = cnav.occupancy_grid_pub:mainsdf_spawner script to /home/nirmalraja/colornav_ws/install/cnav/lib/cnav
+[1.250s] writing list of installed files to '/home/nirmalraja/colornav_ws/build/cnav/install.log'
+[1.296s] Invoked command in '/home/nirmalraja/colornav_ws/src/cnav' returned '0': PYTHONPATH=/home/nirmalraja/colornav_ws/build/cnav/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/nirmalraja/colornav_ws/install/cnav/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/cnav build --build-base /home/nirmalraja/colornav_ws/build/cnav/build install --record /home/nirmalraja/colornav_ws/build/cnav/install.log --single-version-externally-managed install_data

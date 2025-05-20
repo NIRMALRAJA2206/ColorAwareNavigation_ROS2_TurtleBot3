@@ -1,0 +1,79 @@
+<?xml version='1.0'?>
+<sdf version='1.7'>
+  <model name='maze'>
+    <pose>0 0 0 0 0 0</pose>
+    <static>true</static>
+
+    <!-- ───── corridor walls (0.4 m tall, 0.1 m thick, 12 m long) ───── -->
+    <link name='left_wall'>
+      <pose>-2 6 0.2 0 0 0</pose>
+      <collision name='c'>
+        <geometry><box><size>0.1 12 0.4</size></box></geometry>
+      </collision>
+      <visual name='v'>
+        <geometry><box><size>0.1 12 0.4</size></box></geometry>
+        <material><ambient>0.8 0.8 0.8 1</ambient></material>
+      </visual>
+    </link>
+
+    <link name='right_wall'>
+      <pose> 2 6 0.2 0 0 0</pose>
+      <collision name='c'>
+        <geometry><box><size>0.1 12 0.4</size></box></geometry>
+      </collision>
+      <visual name='v'>
+        <geometry><box><size>0.1 12 0.4</size></box></geometry>
+        <material><ambient>0.8 0.8 0.8 1</ambient></material>
+      </visual>
+    </link>
+
+    <!-- ───── BLUE #1 – cylinder Ø0.25 × 0.6 m (left) ───── -->
+    <link name='blue_cylinder'>
+      <pose>-0.55 2 0.3 0 0 0</pose>
+      <collision name='col'>
+        <geometry><cylinder><radius>0.25</radius><length>0.6</length></cylinder></geometry>
+      </collision>
+      <visual name='vis'>
+        <geometry><cylinder><radius>0.25</radius><length>0.6</length></cylinder></geometry>
+        <material><ambient>0 0 1 1</ambient><diffuse>0 0 1 1</diffuse></material>
+      </visual>
+    </link>
+
+    <!-- ───── RED #1 – cube 0.30 m (right) ───── -->
+    <link name='red_cube'>
+      <pose>0.55 4 0.15 0 0 0</pose>
+      <collision name='col'>
+        <geometry><box><size>0.4 0.4 0.4</size></box></geometry>
+      </collision>
+      <visual name='vis'>
+        <geometry><box><size>0.4 0.4 0.4</size></box></geometry>
+        <material><ambient>1 0 0 1</ambient><diffuse>1 0 0 1</diffuse></material>
+      </visual>
+    </link>
+
+    <!-- ───── BLUE #2 – “pyramid” (simple box 0.35 m) (left) ───── -->
+    <link name='blue_pyramid'>
+      <pose>-0.55 6 0.175 0 0 0</pose>
+      <collision name='col'>
+        <geometry><box><size>0.35 0.35 0.35</size></box></geometry>
+      </collision>
+      <visual name='vis'>
+        <geometry><box><size>0.35 0.35 0.35</size></box></geometry>
+        <material><ambient>0 0 1 1</ambient><diffuse>0 0 1 1</diffuse></material>
+      </visual>
+    </link>
+
+    <!-- ───── RED #2 – sphere Ø0.28 m (right) ───── -->
+    <link name='red_sphere'>
+      <pose>0.55 8 0.14 0 0 0</pose>
+      <collision name='col'>
+        <geometry><sphere><radius>0.2</radius></sphere></geometry>
+      </collision>
+      <visual name='vis'>
+        <geometry><sphere><radius>0.2</radius></sphere></geometry>
+        <material><ambient>1 0 0 1</ambient><diffuse>1 0 0 1</diffuse></material>
+      </visual>
+    </link>
+
+  </model>
+</sdf>

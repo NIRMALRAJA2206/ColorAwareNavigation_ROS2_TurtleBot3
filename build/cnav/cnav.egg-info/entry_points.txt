@@ -1,0 +1,7 @@
+[console_scripts]
+maze_solver = cnav.maze_solver:main
+maze_task = cnav.maze_task:main
+msg = cnav.msg:main
+occupancy_grid_pub = cnav.occupancy_grid_pub:main
+sdf_spawner = cnav.spawn_entity:main
+

@@ -1,0 +1,26 @@
+running egg_info
+writing ../../build/cnav/cnav.egg-info/PKG-INFO
+writing dependency_links to ../../build/cnav/cnav.egg-info/dependency_links.txt
+writing entry points to ../../build/cnav/cnav.egg-info/entry_points.txt
+writing requirements to ../../build/cnav/cnav.egg-info/requires.txt
+writing top-level names to ../../build/cnav/cnav.egg-info/top_level.txt
+reading manifest file '../../build/cnav/cnav.egg-info/SOURCES.txt'
+writing manifest file '../../build/cnav/cnav.egg-info/SOURCES.txt'
+running build
+running build_py
+running install
+running install_lib
+running install_data
+copying launch/maze_navigation.launch.py -> /home/karuppia/colornav_ws/install/cnav/share/cnav/launch
+copying config/maze.pgm -> /home/karuppia/colornav_ws/install/cnav/share/cnav/config
+copying config/maze.yaml -> /home/karuppia/colornav_ws/install/cnav/share/cnav/config
+running install_egg_info
+removing '/home/karuppia/colornav_ws/install/cnav/lib/python3.10/site-packages/cnav-0.0.0-py3.10.egg-info' (and everything under it)
+Copying ../../build/cnav/cnav.egg-info to /home/karuppia/colornav_ws/install/cnav/lib/python3.10/site-packages/cnav-0.0.0-py3.10.egg-info
+running install_scripts
+Installing maze_solver script to /home/karuppia/colornav_ws/install/cnav/lib/cnav
+Installing maze_task script to /home/karuppia/colornav_ws/install/cnav/lib/cnav
+Installing msg script to /home/karuppia/colornav_ws/install/cnav/lib/cnav
+Installing occupancy_grid_pub script to /home/karuppia/colornav_ws/install/cnav/lib/cnav
+Installing sdf_spawner script to /home/karuppia/colornav_ws/install/cnav/lib/cnav
+writing list of installed files to '/home/karuppia/colornav_ws/build/cnav/install.log'

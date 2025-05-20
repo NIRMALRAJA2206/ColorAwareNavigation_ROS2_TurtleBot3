@@ -1,0 +1,87 @@
+[0.000000] (-) TimerEvent: {}
+[0.000879] (cnav) JobQueued: {'identifier': 'cnav', 'dependencies': OrderedDict()}
+[0.000983] (cnav) JobStarted: {'identifier': 'cnav'}
+[0.099727] (-) TimerEvent: {}
+[0.200020] (-) TimerEvent: {}
+[0.300365] (-) TimerEvent: {}
+[0.400676] (-) TimerEvent: {}
+[0.501007] (-) TimerEvent: {}
+[0.601317] (-) TimerEvent: {}
+[0.701646] (-) TimerEvent: {}
+[0.802003] (-) TimerEvent: {}
+[0.857805] (cnav) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/cnav', 'build', '--build-base', '/home/nirmalraja/colornav_ws/build/cnav/build', 'install', '--record', '/home/nirmalraja/colornav_ws/build/cnav/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/nirmalraja/colornav_ws/src/cnav', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'LANGUAGE': 'en_CA:en', 'USER': 'nirmalraja', 'XDG_SESSION_TYPE': 'wayland', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/usr/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/home/nirmalraja', 'CONDA_SHLVL': '0', 'OLDPWD': '/home/nirmalraja', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'SYSTEMD_EXEC_PID': '2138', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', '_CE_M': '', '_colcon_cd_root': '/opt/ros/humble/', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/nirmalraja/colornav_ws/install', 'ROS_DISTRO': 'humble', 'LOGNAME': 'nirmalraja', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'nirmalraja', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', '_CE_CONDA': '', 'ROS_LOCALHOST_ONLY': '1', 'PATH': '/opt/ros/humble/bin:/home/nirmalraja/anaconda3/condabin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/BEYOND2206:@/tmp/.ICE-unix/2108,unix/BEYOND2206:/tmp/.ICE-unix/2108', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/0d62e62d_0555_4d95_ac8d_a5569d2e28e7', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.XVZX62', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'GNOME_TERMINAL_SERVICE': ':1.416', 'SSH_AGENT_LAUNCHER': 'gnome-keyring', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'ROS_DOMAIN_ID': '222', 'AMENT_PREFIX_PATH': '/home/nirmalraja/colornav_ws/install/cnav:/opt/ros/humble', 'CONDA_PYTHON_EXE': '/home/nirmalraja/anaconda3/bin/python', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/nirmalraja/colornav_ws/build/cnav', 'TURTLEBOT3_MODEL': 'waffle', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'CONDA_EXE': '/home/nirmalraja/anaconda3/bin/conda', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/nirmalraja/colornav_ws/build/cnav/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/nirmalraja/colornav_ws/install/cnav/lib/python3.10/site-packages:/home/nirmalraja/colornav_ws/install/cnav/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1', 'VTE_VERSION': '6800'}, 'shell': False}
+[0.902108] (-) TimerEvent: {}
+[1.002401] (-) TimerEvent: {}
+[1.102728] (-) TimerEvent: {}
+[1.194985] (cnav) StdoutLine: {'line': b'running egg_info\n'}
+[1.195863] (cnav) StdoutLine: {'line': b'creating ../../build/cnav/cnav.egg-info\n'}
+[1.196192] (cnav) StdoutLine: {'line': b'writing ../../build/cnav/cnav.egg-info/PKG-INFO\n'}
+[1.196493] (cnav) StdoutLine: {'line': b'writing dependency_links to ../../build/cnav/cnav.egg-info/dependency_links.txt\n'}
+[1.196708] (cnav) StdoutLine: {'line': b'writing entry points to ../../build/cnav/cnav.egg-info/entry_points.txt\n'}
+[1.196945] (cnav) StdoutLine: {'line': b'writing requirements to ../../build/cnav/cnav.egg-info/requires.txt\n'}
+[1.197089] (cnav) StdoutLine: {'line': b'writing top-level names to ../../build/cnav/cnav.egg-info/top_level.txt\n'}
+[1.197330] (cnav) StdoutLine: {'line': b"writing manifest file '../../build/cnav/cnav.egg-info/SOURCES.txt'\n"}
+[1.200040] (cnav) StdoutLine: {'line': b"reading manifest file '../../build/cnav/cnav.egg-info/SOURCES.txt'\n"}
+[1.201033] (cnav) StdoutLine: {'line': b"writing manifest file '../../build/cnav/cnav.egg-info/SOURCES.txt'\n"}
+[1.201285] (cnav) StdoutLine: {'line': b'running build\n'}
+[1.201428] (cnav) StdoutLine: {'line': b'running build_py\n'}
+[1.201639] (cnav) StdoutLine: {'line': b'creating /home/nirmalraja/colornav_ws/build/cnav/build\n'}
+[1.201752] (cnav) StdoutLine: {'line': b'creating /home/nirmalraja/colornav_ws/build/cnav/build/lib\n'}
+[1.201847] (cnav) StdoutLine: {'line': b'creating /home/nirmalraja/colornav_ws/build/cnav/build/lib/cnav\n'}
+[1.202079] (cnav) StdoutLine: {'line': b'copying cnav/spawn_entity.py -> /home/nirmalraja/colornav_ws/build/cnav/build/lib/cnav\n'}
+[1.202190] (cnav) StdoutLine: {'line': b'copying cnav/__init__.py -> /home/nirmalraja/colornav_ws/build/cnav/build/lib/cnav\n'}
+[1.202321] (cnav) StdoutLine: {'line': b'copying cnav/msg.py -> /home/nirmalraja/colornav_ws/build/cnav/build/lib/cnav\n'}
+[1.202444] (cnav) StdoutLine: {'line': b'copying cnav/maze_solver.py -> /home/nirmalraja/colornav_ws/build/cnav/build/lib/cnav\n'}
+[1.202540] (cnav) StdoutLine: {'line': b'copying cnav/occupancy_grid_pub.py -> /home/nirmalraja/colornav_ws/build/cnav/build/lib/cnav\n'}
+[1.202676] (cnav) StdoutLine: {'line': b'copying cnav/maze_task.py -> /home/nirmalraja/colornav_ws/build/cnav/build/lib/cnav\n'}
+[1.202742] (-) TimerEvent: {}
+[1.203032] (cnav) StdoutLine: {'line': b'running install\n'}
+[1.203457] (cnav) StdoutLine: {'line': b'running install_lib\n'}
+[1.204497] (cnav) StdoutLine: {'line': b'creating /home/nirmalraja/colornav_ws/install/cnav/lib/python3.10/site-packages/cnav\n'}
+[1.204715] (cnav) StdoutLine: {'line': b'copying /home/nirmalraja/colornav_ws/build/cnav/build/lib/cnav/spawn_entity.py -> /home/nirmalraja/colornav_ws/install/cnav/lib/python3.10/site-packages/cnav\n'}
+[1.204874] (cnav) StdoutLine: {'line': b'copying /home/nirmalraja/colornav_ws/build/cnav/build/lib/cnav/__init__.py -> /home/nirmalraja/colornav_ws/install/cnav/lib/python3.10/site-packages/cnav\n'}
+[1.205007] (cnav) StdoutLine: {'line': b'copying /home/nirmalraja/colornav_ws/build/cnav/build/lib/cnav/msg.py -> /home/nirmalraja/colornav_ws/install/cnav/lib/python3.10/site-packages/cnav\n'}
+[1.205107] (cnav) StdoutLine: {'line': b'copying /home/nirmalraja/colornav_ws/build/cnav/build/lib/cnav/maze_solver.py -> /home/nirmalraja/colornav_ws/install/cnav/lib/python3.10/site-packages/cnav\n'}
+[1.205180] (cnav) StdoutLine: {'line': b'copying /home/nirmalraja/colornav_ws/build/cnav/build/lib/cnav/occupancy_grid_pub.py -> /home/nirmalraja/colornav_ws/install/cnav/lib/python3.10/site-packages/cnav\n'}
+[1.205331] (cnav) StdoutLine: {'line': b'copying /home/nirmalraja/colornav_ws/build/cnav/build/lib/cnav/maze_task.py -> /home/nirmalraja/colornav_ws/install/cnav/lib/python3.10/site-packages/cnav\n'}
+[1.207461] (cnav) StdoutLine: {'line': b'byte-compiling /home/nirmalraja/colornav_ws/install/cnav/lib/python3.10/site-packages/cnav/spawn_entity.py to spawn_entity.cpython-310.pyc\n'}
+[1.208106] (cnav) StdoutLine: {'line': b'byte-compiling /home/nirmalraja/colornav_ws/install/cnav/lib/python3.10/site-packages/cnav/__init__.py to __init__.cpython-310.pyc\n'}
+[1.208315] (cnav) StdoutLine: {'line': b'byte-compiling /home/nirmalraja/colornav_ws/install/cnav/lib/python3.10/site-packages/cnav/msg.py to msg.cpython-310.pyc\n'}
+[1.211481] (cnav) StdoutLine: {'line': b'byte-compiling /home/nirmalraja/colornav_ws/install/cnav/lib/python3.10/site-packages/cnav/maze_solver.py to maze_solver.cpython-310.pyc\n'}
+[1.212398] (cnav) StdoutLine: {'line': b'byte-compiling /home/nirmalraja/colornav_ws/install/cnav/lib/python3.10/site-packages/cnav/occupancy_grid_pub.py to occupancy_grid_pub.cpython-310.pyc\n'}
+[1.212677] (cnav) StdoutLine: {'line': b'byte-compiling /home/nirmalraja/colornav_ws/install/cnav/lib/python3.10/site-packages/cnav/maze_task.py to maze_task.cpython-310.pyc\n'}
+[1.213599] (cnav) StdoutLine: {'line': b'running install_data\n'}
+[1.213787] (cnav) StdoutLine: {'line': b'creating /home/nirmalraja/colornav_ws/install/cnav/share/ament_index\n'}
+[1.213988] (cnav) StdoutLine: {'line': b'creating /home/nirmalraja/colornav_ws/install/cnav/share/ament_index/resource_index\n'}
+[1.214129] (cnav) StdoutLine: {'line': b'creating /home/nirmalraja/colornav_ws/install/cnav/share/ament_index/resource_index/packages\n'}
+[1.214217] (cnav) StdoutLine: {'line': b'copying resource/cnav -> /home/nirmalraja/colornav_ws/install/cnav/share/ament_index/resource_index/packages\n'}
+[1.214294] (cnav) StdoutLine: {'line': b'copying package.xml -> /home/nirmalraja/colornav_ws/install/cnav/share/cnav\n'}
+[1.214408] (cnav) StdoutLine: {'line': b'creating /home/nirmalraja/colornav_ws/install/cnav/share/cnav/launch\n'}
+[1.214480] (cnav) StdoutLine: {'line': b'copying launch/maze_navigation.launch.py -> /home/nirmalraja/colornav_ws/install/cnav/share/cnav/launch\n'}
+[1.214596] (cnav) StdoutLine: {'line': b'creating /home/nirmalraja/colornav_ws/install/cnav/share/cnav/config\n'}
+[1.214685] (cnav) StdoutLine: {'line': b'copying config/tb3_nav_params.yaml -> /home/nirmalraja/colornav_ws/install/cnav/share/cnav/config\n'}
+[1.214758] (cnav) StdoutLine: {'line': b'copying config/twist_mux.yaml -> /home/nirmalraja/colornav_ws/install/cnav/share/cnav/config\n'}
+[1.214857] (cnav) StdoutLine: {'line': b'copying config/maze.yaml -> /home/nirmalraja/colornav_ws/install/cnav/share/cnav/config\n'}
+[1.214988] (cnav) StdoutLine: {'line': b'copying config/maze2.yaml -> /home/nirmalraja/colornav_ws/install/cnav/share/cnav/config\n'}
+[1.215082] (cnav) StdoutLine: {'line': b'copying config/tb3_world.yaml -> /home/nirmalraja/colornav_ws/install/cnav/share/cnav/config\n'}
+[1.215153] (cnav) StdoutLine: {'line': b'copying config/tb3_world.pgm -> /home/nirmalraja/colornav_ws/install/cnav/share/cnav/config\n'}
+[1.215246] (cnav) StdoutLine: {'line': b'copying config/tb3_cartographer.lua -> /home/nirmalraja/colornav_ws/install/cnav/share/cnav/config\n'}
+[1.215333] (cnav) StdoutLine: {'line': b'copying config/tb3_nav.rviz -> /home/nirmalraja/colornav_ws/install/cnav/share/cnav/config\n'}
+[1.215424] (cnav) StdoutLine: {'line': b'copying config/maze.pgm -> /home/nirmalraja/colornav_ws/install/cnav/share/cnav/config\n'}
+[1.215514] (cnav) StdoutLine: {'line': b'copying config/maze2.pgm -> /home/nirmalraja/colornav_ws/install/cnav/share/cnav/config\n'}
+[1.215658] (cnav) StdoutLine: {'line': b'creating /home/nirmalraja/colornav_ws/install/cnav/share/cnav/world\n'}
+[1.215768] (cnav) StdoutLine: {'line': b'creating /home/nirmalraja/colornav_ws/install/cnav/share/cnav/world/maze\n'}
+[1.215866] (cnav) StdoutLine: {'line': b'copying world/maze/model.config -> /home/nirmalraja/colornav_ws/install/cnav/share/cnav/world/maze\n'}
+[1.215988] (cnav) StdoutLine: {'line': b'copying world/maze/model.sdf -> /home/nirmalraja/colornav_ws/install/cnav/share/cnav/world/maze\n'}
+[1.216085] (cnav) StdoutLine: {'line': b'running install_egg_info\n'}
+[1.218622] (cnav) StdoutLine: {'line': b'Copying ../../build/cnav/cnav.egg-info to /home/nirmalraja/colornav_ws/install/cnav/lib/python3.10/site-packages/cnav-0.0.0-py3.10.egg-info\n'}
+[1.219759] (cnav) StdoutLine: {'line': b'running install_scripts\n'}
+[1.249215] (cnav) StdoutLine: {'line': b'Installing maze_solver script to /home/nirmalraja/colornav_ws/install/cnav/lib/cnav\n'}
+[1.249663] (cnav) StdoutLine: {'line': b'Installing maze_task script to /home/nirmalraja/colornav_ws/install/cnav/lib/cnav\n'}
+[1.250151] (cnav) StdoutLine: {'line': b'Installing msg script to /home/nirmalraja/colornav_ws/install/cnav/lib/cnav\n'}
+[1.250526] (cnav) StdoutLine: {'line': b'Installing occupancy_grid_pub = cnav.occupancy_grid_pub:mainsdf_spawner script to /home/nirmalraja/colornav_ws/install/cnav/lib/cnav\n'}
+[1.250808] (cnav) StdoutLine: {'line': b"writing list of installed files to '/home/nirmalraja/colornav_ws/build/cnav/install.log'\n"}
+[1.296192] (cnav) CommandEnded: {'returncode': 0}
+[1.302960] (-) TimerEvent: {}
+[1.307877] (cnav) JobEnded: {'identifier': 'cnav', 'rc': 0}
+[1.308748] (-) EventReactorShutdown: {}
