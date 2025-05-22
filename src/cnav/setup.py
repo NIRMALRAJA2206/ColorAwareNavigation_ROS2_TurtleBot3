@@ -31,6 +31,7 @@ setup(
             'msg = cnav.msg:main',
             'maze_task = cnav.maze_task:main',
             'maze_solver = cnav.maze_solver:main',
+            'xmsg = cnav.xmsg:main',
         ],
     },
 )

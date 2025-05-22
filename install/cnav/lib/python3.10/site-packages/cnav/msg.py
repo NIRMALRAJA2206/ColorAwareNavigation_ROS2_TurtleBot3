@@ -22,10 +22,12 @@ from geometry_msgs.msg import PoseWithCovarianceStamped
 HSV_BLUE = ((100,130, 50), (140,255,255))
 HSV_RED1 = ((  0,100,100), ( 10,255,255))
 HSV_RED2 = ((160,100,100), (179,255,255))
-MIN_PIX_AREA    = 100000
-REPORT_DISTANCE = 1.2
+MIN_PIX_AREA    = 80000
+REPORT_DISTANCE = 1.6
 CAMERA_HFOV_DEG = 77
-WAYPOINT_FILE   = "/home/karuppia/colornav_ws/src/cnav/cnav/waypoints.txt"
+LASER_YAW_OFFSET_DEG = 0.0
+DETECTION_RADIUS_M = 0.5
+WAYPOINT_FILE   = "/home/karuppia/colornav_ws/src/cnav/cnav/way.txt"
 
 # ---------------------------------------------------------------------------------
 
@@ -39,6 +41,8 @@ def lateral_shift(D, A, W=640, FOV=77):
     object_width_pixels = math.sqrt(A)
     offset_pixels = abs(object_width_pixels / 2 - W / 2)
     lateral_shift_meters = offset_pixels / PPM
+    if lateral_shift_meters < 0.3 :
+        lateral_shift_meters = 0.4
     return lateral_shift_meters
 
 def load_waypoints_from_file(filepath, default_z=0.0, frame="map"):
@@ -123,25 +127,37 @@ class MazeNavigatorWithColourDetector(Node):
         self._try_process_detection()
 
     def _try_process_detection(self):
-        if self.latest_image is None or self.scan is None:
+        if self.latest_image is None or self.scan is None or self.current_pose is None:
             return
+        
+        # ── detect only when close to the active waypoint ──
+        if self.i < len(self.goals):
+            goal_pos = self.goals[self.i].pose.position
+            cur_pos  = self.current_pose.pose.position
+            dist = math.hypot(goal_pos.x - cur_pos.x,
+                            goal_pos.y - cur_pos.y)
+            if dist > DETECTION_RADIUS_M:
+                return          # ← outside bubble → skip detection
+        # ──────────────────────────────────────────────────
+
         self._process_colour_detection()
 
+
+
     def _process_colour_detection(self):
+        """Detect red/blue blobs, compute their LiDAR distance, and stage a trigger."""
         if self.latest_image is None or self.scan is None:
             return
 
-        img = self.bridge.imgmsg_to_cv2(self.latest_image, "bgr8")
-        hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
-
+        img  = self.bridge.imgmsg_to_cv2(self.latest_image, "bgr8")
+        hsv  = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
         masks = {
             "blue": cv2.inRange(hsv, *HSV_BLUE),
-            "red":  cv2.inRange(hsv, *HSV_RED1) | cv2.inRange(hsv, *HSV_RED2)
+            "red":  cv2.inRange(hsv, *HSV_RED1) | cv2.inRange(hsv, *HSV_RED2),
         }
 
-        current_time = self.get_clock().now().nanoseconds / 1e9
-
-        detected = False
+        now  = self.get_clock().now().nanoseconds / 1e9
+        found_any = False
 
         for colour, mask in masks.items():
             contours, _ = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
@@ -149,56 +165,68 @@ class MazeNavigatorWithColourDetector(Node):
                 continue
 
             largest = max(contours, key=cv2.contourArea)
-            area = cv2.contourArea(largest)
+            area    = cv2.contourArea(largest)
             if area < MIN_PIX_AREA:
                 continue
 
+            # ───────────────────── pixel → camera angle ──────────────────────
             M = cv2.moments(largest)
             if M["m00"] == 0:
                 continue
+            cx     = M["m10"] / M["m00"]
+            img_w  = img.shape[1]
+            cam_ang = ((cx - img_w / 2) / (img_w / 2)) * math.radians(CAMERA_HFOV_DEG / 2)
 
-            cx = int(M["m10"] / M["m00"])
-            img_w = img.shape[1]
-            norm_x = (cx - img_w / 2) / (img_w / 2)
-            angle = norm_x * math.radians(CAMERA_HFOV_DEG / 2)
+            # ───────────────────── camera → LiDAR angle ──────────────────────
+            laser_ang = -cam_ang + math.radians(LASER_YAW_OFFSET_DEG)  # flip + optional offset
 
-            angle_min = self.scan.angle_min
-            angle_inc = self.scan.angle_increment
-            n_beams = len(self.scan.ranges)
+            scan      = self.scan
+            beam_idx  = int(round((laser_ang - scan.angle_min) / scan.angle_increment))
+            beam_idx  = max(0, min(beam_idx, len(scan.ranges) - 1))
 
-            beam_idx = int(round((angle - angle_min) / angle_inc)) % n_beams
-            neighbors = [self.scan.ranges[(beam_idx + i) % n_beams] for i in (-2, -1, 0, 1, 2)]
-            dist = np.nanmedian(np.array(neighbors))
+            # take median of ±2 neighbouring finite beams
+            neighbour_vals = [
+                scan.ranges[(beam_idx + i) % len(scan.ranges)]
+                for i in (-2, -1, 0, 1, 2)
+                if math.isfinite(scan.ranges[(beam_idx + i) % len(scan.ranges)])
+            ]
+            if not neighbour_vals:
+                continue
+            dist = float(np.median(neighbour_vals))
 
-            if not (0.1 < dist < REPORT_DISTANCE and dist <= self.scan.range_max):
+            # ───────────────────── staging logic ─────────────────────────────
+            if not (math.isfinite(dist) and 0.1 < dist < REPORT_DISTANCE):
                 continue
 
-            detected = True
+            found_any = True
             if getattr(self, "staging_colour", None) == colour:
                 self.staging_count += 1
-                duration = current_time - self.staging_start
+                dur = now - self.staging_start
             else:
                 self.staging_colour = colour
-                self.staging_count = 1
-                self.staging_start = current_time
-                duration = 0.0
+                self.staging_count  = 1
+                self.staging_start  = now
+                dur = 0.0
 
-            self.get_logger().info(f"[STAGING] {colour.upper()} seen {self.staging_count}x, {duration:.1f}s...")
+            self.get_logger().info(f"[STAGING] {colour.upper()} seen {self.staging_count}× for {dur:.1f}s "
+                                   f"(area={int(area)}px, dist={dist:.2f} m, beam={beam_idx})")
 
-            if self.staging_count >= 5 and duration >= 0.2:
+            if self.staging_count >= 5 and dur >= 0.2:
                 self.get_logger().info(
-                    f"[TRIGGER] {colour.upper()} detected {self.staging_count}x for {duration:.2f}s → CONFIRMED"
+                    f"[TRIGGER] {colour.upper()} CONFIRMED → {int(area)}px at {dist:.2f} m (beam {beam_idx})"
                 )
                 self.last_detection = (colour.upper(), int(area), round(dist, 2), beam_idx)
                 self.staging_colour = None
-                self.staging_count = 0
-                self.staging_start = None
-            return
+                self.staging_count  = 0
+                self.staging_start  = None
+            return  # only process one colour per frame
 
-        if not detected:
+        # reset staging if nothing suitable was seen
+        if not found_any:
             self.staging_colour = None
-            self.staging_count = 0
-            self.staging_start = None
+            self.staging_count  = 0
+            self.staging_start  = None
+
 
     def _initiate_side_step(self, go_left=True, step_distance=0.4):
         if self.current_pose is None:
@@ -330,3 +358,5 @@ def main(args=None):
 
 if __name__ == '__main__':
     main()
+
+

@@ -1,0 +1,26 @@
+[0.253s] Invoking command in '/home/karuppia/colornav_ws/src/cnav': PYTHONPATH=/home/karuppia/colornav_ws/build/cnav/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/karuppia/colornav_ws/install/cnav/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/cnav build --build-base /home/karuppia/colornav_ws/build/cnav/build install --record /home/karuppia/colornav_ws/build/cnav/install.log --single-version-externally-managed install_data
+[0.350s] running egg_info
+[0.350s] writing ../../build/cnav/cnav.egg-info/PKG-INFO
+[0.350s] writing dependency_links to ../../build/cnav/cnav.egg-info/dependency_links.txt
+[0.350s] writing entry points to ../../build/cnav/cnav.egg-info/entry_points.txt
+[0.350s] writing requirements to ../../build/cnav/cnav.egg-info/requires.txt
+[0.351s] writing top-level names to ../../build/cnav/cnav.egg-info/top_level.txt
+[0.351s] reading manifest file '../../build/cnav/cnav.egg-info/SOURCES.txt'
+[0.352s] writing manifest file '../../build/cnav/cnav.egg-info/SOURCES.txt'
+[0.352s] running build
+[0.352s] running build_py
+[0.352s] running install
+[0.352s] running install_lib
+[0.352s] running install_data
+[0.352s] running install_egg_info
+[0.353s] removing '/home/karuppia/colornav_ws/install/cnav/lib/python3.10/site-packages/cnav-0.0.0-py3.10.egg-info' (and everything under it)
+[0.353s] Copying ../../build/cnav/cnav.egg-info to /home/karuppia/colornav_ws/install/cnav/lib/python3.10/site-packages/cnav-0.0.0-py3.10.egg-info
+[0.354s] running install_scripts
+[0.363s] Installing maze_solver script to /home/karuppia/colornav_ws/install/cnav/lib/cnav
+[0.363s] Installing maze_task script to /home/karuppia/colornav_ws/install/cnav/lib/cnav
+[0.363s] Installing msg script to /home/karuppia/colornav_ws/install/cnav/lib/cnav
+[0.363s] Installing occupancy_grid_pub script to /home/karuppia/colornav_ws/install/cnav/lib/cnav
+[0.363s] Installing sdf_spawner script to /home/karuppia/colornav_ws/install/cnav/lib/cnav
+[0.363s] Installing xmsg script to /home/karuppia/colornav_ws/install/cnav/lib/cnav
+[0.363s] writing list of installed files to '/home/karuppia/colornav_ws/build/cnav/install.log'
+[0.373s] Invoked command in '/home/karuppia/colornav_ws/src/cnav' returned '0': PYTHONPATH=/home/karuppia/colornav_ws/build/cnav/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/karuppia/colornav_ws/install/cnav/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/cnav build --build-base /home/karuppia/colornav_ws/build/cnav/build install --record /home/karuppia/colornav_ws/build/cnav/install.log --single-version-externally-managed install_data
